@@ -5,10 +5,14 @@ array.map(function(word, index, array1) {
     fruit[index] = word;
     return array1;
 });  */
-function map( array1, array2 ) {
-    for ( let i = 0; i < array1.length; ++i ) {
-        array2[i] = array1[i];
-    }
-    return array2;
+function foo(value) {
+    return value + "**";
 }
-console.log( map( array, fruit ) );
+function map( array, fn ) {
+    let arr = [];
+    for ( let i = 0; i < array.length; ++i ) {
+        arr.push(fn(array[i])); 
+    }
+    return arr;
+}
+console.log( map( array, foo) );

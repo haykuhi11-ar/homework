@@ -3,11 +3,16 @@ const array = [1, 2, 10, 20, 30, 700];
     return num % 10 === 0;
 });
 */
-function some( array ) {
-for ( let i = 0; i < array.length; ++i ) {
-    if ( array[i] % 10 === 0 ) return true;
+
+ function fn (value) {
+     if ( value % 10 === 0 ) return true;
+    return false;
 }
+function some(array, fn) {
+    for ( let i = 0; i < array.length; ++i ) {
+        let res = fn(array[i]);
+        if (res)  return true;
+    }
 return false;
 }
-let result = some( array );
-console.log(result);
+console.log(some(array, fn));
